@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import customData from '../sequences/login.json';
-import singleBOMData from '../sequences/singlebom.json';
+//import singleBOMData from '../sequences/singlebom.json';
 // Path2D for a Heart SVG
 const heartSVG = "M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z"
 const SVG_PATH = new Path2D(heartSVG);
@@ -83,79 +83,10 @@ export function drawLoginInteraction(ctx){
   drawReturnMessageToObject(ctx, 600,60,900,"{tuples}")
   drawReturnMessageToObject(ctx, 300,70,600,"{data:accessToken,userInfo}")
   //drawReturnMessageToObject(ctx, 10,90,300,"{data}")
-  drawMessageToSelf(ctx,300,90,"Redirect to BOM IQ")
-  drawReturnMessageToObject(ctx, 10,130,300,"BOM IQ")
+  drawMessageToSelf(ctx,300,90,"Redirect to Page")
+  drawReturnMessageToObject(ctx, 10,130,300,"Page")
 };
 
-//draw BOMIQ
-export function drawBOMIQInteraction(ctx){
-  //readSequenceFile()
-  console.log("attempting to draw")
-  ctx.fillStyle = 'white';
-  ctx.save();
-  ctx.scale(SCALE, SCALE);
-  drawObjectInst(ctx,10,10,"User")
-  drawObjectInst(ctx,300,10,"BOM IQ")
-  drawObjectInst(ctx,600,10,"API")
-  drawObjectInst(ctx,900,10,"DB")
-  drawMessageToObject(ctx, 10,10,300,"BOM IQ")
-  drawMessageToObject(ctx, 300,20,600,"POST /download/logoAndAvatar")
-  drawReturnMessageToObject(ctx, 300,50,600,"{success,data:base64}")
-  drawMessageToObject(ctx, 300,80,600,"GET /masters/headers/bom_iq")
-  drawMessageToObject(ctx, 600,90,900,"db.Tableheaders.find")
-  drawReturnMessageToObject(ctx, 600,120,900,"{tuples}")
-  drawReturnMessageToObject(ctx, 300,140,600,"{data:headers}")
-
-  //second set of interactions - dynamicFilters
-  drawMessageToObject(ctx, 300,170,600,"GET /dynamicFilters?company_id,bom_type")
-  drawMessageToObject(ctx, 600,190,900,"db.BOM.findAll")
-  drawReturnMessageToObject(ctx, 600,220,900,"{tuples}")
-  drawReturnMessageToObject(ctx, 300,230,600,"{data:years,quarter}")
-
-  drawMessageToObject(ctx, 300,260,600,"GET /boms?company_id,limit,offset,bom_type")
-  drawMessageToObject(ctx, 600,280,900,"db.BOM.findAll")
-  drawReturnMessageToObject(ctx, 600,310,900,"{filtered BOM tuples}")
-  drawReturnMessageToObject(ctx, 300,330,600,"{data: name, bom_name, productname, bom_cost}")
-
-  drawReturnMessageToObject(ctx, 10,340,300,"BOM IQ with details")
-
-  
-};
-
-//draw single BOM Interaction
-export function drawSingleBOMInteraction(ctx){
-  //readSequenceFile()
-  console.log("attempting to draw")
-  ctx.fillStyle = 'white';
-  ctx.save();
-  ctx.scale(SCALE, SCALE);
-  drawObjectInst(ctx,10,10,"User")
-  drawObjectInst(ctx,300,10,"BOM IQ")
-  drawObjectInst(ctx,600,10,"API")
-  drawObjectInst(ctx,900,10,"DB")
-  drawMessageToObject(ctx, 10,10,300,"Select Single BOM")
-  drawMessageToObject(ctx, 300,20,600,"POST /download/logoAndAvatar")
-  drawReturnMessageToObject(ctx, 300,50,600,"{success,data:base64}")
-  drawMessageToObject(ctx, 300,80,600,"GET /masters/headers/bom_iq")
-  drawMessageToObject(ctx, 600,90,900,"db.Tableheaders.find")
-  drawReturnMessageToObject(ctx, 600,120,900,"{tuples}")
-  drawReturnMessageToObject(ctx, 300,140,600,"{data:headers}")
-
-  //second set of interactions - dynamicFilters
-  drawMessageToObject(ctx, 300,170,600,"GET /dynamicFilters?company_id,bom_type")
-  drawMessageToObject(ctx, 600,190,900,"db.BOM.findAll")
-  drawReturnMessageToObject(ctx, 600,220,900,"{tuples}")
-  drawReturnMessageToObject(ctx, 300,230,600,"{data:years,quarter}")
-
-  drawMessageToObject(ctx, 300,260,600,"GET /boms?company_id,limit,offset,bom_type")
-  drawMessageToObject(ctx, 600,280,900,"db.BOM.findAll")
-  drawReturnMessageToObject(ctx, 600,310,900,"{filtered BOM tuples}")
-  drawReturnMessageToObject(ctx, 300,330,600,"{data: name, bom_name, productname, bom_cost}")
-
-  drawReturnMessageToObject(ctx, 10,340,300,"BOM IQ with details")
-
-  
-};
 
 export function drawInteractionFromSampleFile(ctx){
   //readSequenceFile()
@@ -229,9 +160,9 @@ export function drawInteractionFromFile(ctx){
   ctx.fillStyle = 'white';
   ctx.save();
   ctx.scale(SCALE, SCALE);
-  let objects=singleBOMData.objects
+  let objects=customData.objects
   let objectsList=[]
-  let messages=singleBOMData.messages
+  let messages=customData.messages
   let initX=10
   let initY=10
   //draw object instances
@@ -346,10 +277,8 @@ export function useCanvas(){
 //        ctx.rect(10,50,50,50)
         // draw all coordinates held in state
         //drawLoginInteraction(ctx)
-        //drawBOMIQInteraction(ctx)
-        //drawSingleBOMInteraction(ctx)
-       // drawInteractionFromSampleFile(ctx)
-       drawInteractionFromFile(ctx)
+        drawInteractionFromSampleFile(ctx)
+       //drawInteractionFromFile(ctx)
         //coordinates.forEach((coordinate)=>{drawNew(ctx, coordinate)});
     });
 
