@@ -1,0 +1,2 @@
+# SequenceDiagramGen
+Sequence Diagram generator
