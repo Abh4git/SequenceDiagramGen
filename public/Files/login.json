@@ -1,0 +1,11 @@
+{ name: 'Login',
+  Objects: ['User','Login','API','DB'],
+  messages: [{id:'1',title:'test',source:'User',destination:'Login',message:'This is a message', type:'1'}, 
+  {id:'2',title:'test2',source:'Login',destination:'API',message:'This is a new message 2', type:'1'},
+  {id:'3',title:'test3',source:'API',destination:'DB',message:'This is a new message 3', type:'1'},
+  {id:'4',title:'test4',source:'API',destination:'DB',message:'This is a return 1', type:'2'},
+  {id:'5',title:'test5',source:'Login',destination:'API',message:'This is a return 2', type:'2'},
+  {id:'6',title:'test6',source:'User',destination:'Login',message:'This is a return 3', type:'2'}
+],
+  title: 'Login information',
+  description: 'Login sequence is explained here' }

@@ -1,0 +1,12 @@
+{ "name": "Login",
+  "objects": ["User","Login","API","DB"],
+  "messages": [{"id":"1","title":"test1","source":"User","destination":"Login","message":"Login","type":"1"}, 
+    {"id":"2","title":"test2","source":"Login","destination":"API","message":" Login API call","type":"1"},
+    {"id":"3","title":"test3","source":"API","destination":"DB","message":"Login DB Call","type":"1"},
+    {"id":"4","title":"test4","source":"API","destination":"DB","message":"DB Call Return","type":"2"},
+    {"id":"5","title":"test5","source":"Login","destination":"API","message":"API Call Return","type":"2"},
+    {"id":"6","title":"test6","source":"Login","destination":"Login","message":"Redirect to BOMIQ","type":"3"},
+    {"id":"7","title":"test7","source":"User","destination":"Login","message":"BOM IQ","type":"2"}
+  ],
+  "title": "Login information",
+  "description": "Login sequence is explained here" }
