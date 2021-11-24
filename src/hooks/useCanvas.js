@@ -87,7 +87,7 @@ export function drawLoginInteraction(ctx){
   drawReturnMessageToObject(ctx, 10,130,300,"Page")
 };
 
-
+//Method used for drawing the interaction diagram
 export function drawInteractionFromSampleFile(ctx){
   //readSequenceFile()
   console.log("attempting to draw")
