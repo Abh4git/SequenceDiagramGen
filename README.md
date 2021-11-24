@@ -12,4 +12,6 @@ npm start
 
 The program should now run by reading the login.json file in sequences folder and
 it will present the diagram like shown.  
- ![Diagram](https://github.com/Abh4git/SequenceDiagramGen/blob/main/images/program_running.png)
+ ![Diagram](https://github.com/Abh4git/SequenceDiagramGen/blob/main/images/program_running.png)  
+  
+Inspired by https://sequencediagram.org/  
