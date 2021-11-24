@@ -1,6 +1,6 @@
 # SequenceDiagramGen
 Sequence Diagram generator  
-Generates a Sequence Diagram from a JSON format file (similar to login.json in sequences/files)  
+Generates a Sequence Diagram from a JSON format file (similar to login.json in sequences folder in src)  
 Uses Reactjs and HTML5 Canvas.  
 Pre-requisites:  
 Nodejs : Node version used : v16.1.0  
